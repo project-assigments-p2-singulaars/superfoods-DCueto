@@ -1,0 +1,15 @@
+
+article{
+  display: flex;
+  width: 100%;
+
+  img{
+    width: 30%;
+    height: 100%;
+    object-fit: fill;
+    flex-shrink: 0;
+  }
+  .productDetails{
+    width: 100%;
+  }
+}
