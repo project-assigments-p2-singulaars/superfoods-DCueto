@@ -1,4 +1,6 @@
-export const foods = [
+import { Product } from "../product/shared/interfaces/product";
+
+export let foods: Product[] = [
     {
       name: "Pizza",
       calories: 400,
@@ -95,7 +97,10 @@ export const foods = [
       image: "https://i.imgur.com/URhdrAm.png",
       quantity: 0
     }
-  ]
-  
+  ];
+
+  export function setFood( newFood: Product ){
+    foods = [...foods, newFood];
+  }
+
   export default foods;
-  

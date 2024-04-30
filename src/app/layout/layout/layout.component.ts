@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ProductListComponent } from '../../product/components/product-list/product-list.component';
-import { ProductComponent } from '../../product/components/product/product.component';
 import { ProductsPageComponent } from '../../product/pages/products-page/products-page.component';
 
 @Component({
@@ -11,5 +9,5 @@ import { ProductsPageComponent } from '../../product/pages/products-page/product
   styleUrl: './layout.component.scss'
 })
 export class LayoutComponent {
-
+  
 }

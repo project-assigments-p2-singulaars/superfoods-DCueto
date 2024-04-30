@@ -1,11 +1,17 @@
-import { Injectable } from '@angular/core';
-import foods from '../../data/foods';
-import { Product } from '../shared/interfaces/product';
+import { Injectable, signal } from '@angular/core';
+import { foods, setFood } from '../../data/foods';
+import { EmptyProduct, Product } from '../shared/interfaces/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
+  private productDataToMenu = signal<Product >({
+    name: 'init',
+    calories: 0,
+    image: 'init',
+    quantity: 0
+  });
 
   constructor() { }
 
@@ -14,8 +20,20 @@ export class ProductsService {
   }
 
   getProductsByName( name: string ){
-    return foods.filter( ( product: Product ) => 
+    return foods.filter( ( product: Product ) =>
       product.name.toLowerCase().includes( name.toLowerCase() )
     );
+  }
+
+  setDataProductToMenu( dataProduct: Product ){
+    this.productDataToMenu.set( dataProduct );
+  }
+
+  getDataProductToMenu(){
+    return this.productDataToMenu;
+  }
+
+  setNewProduct( product: Product ){
+    setFood( product );
   }
 }

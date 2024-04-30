@@ -5,3 +5,9 @@ export interface Product {
   image: string;
   quantity: number;
 }
+
+export interface EmptyProduct {
+  
+}
+
+export type FormStatus = 'visible' | 'hidden';
