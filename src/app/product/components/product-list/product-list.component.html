@@ -1,4 +1,5 @@
 <app-product-search (search)="handleInputData( $event )"></app-product-search>
+
 <app-new-product-button (formStatusChanged)="handleFormState($event)"></app-new-product-button>
 @if (formStatus === 'visible') {
   <app-product-form (newProduct)="handleNewProduct($event)"></app-product-form>

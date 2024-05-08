@@ -21,7 +21,7 @@ export class ProductMenuComponent implements OnInit {
     this.productRecieved = this.ProductsService.getDataProductToMenu();
     this.totalCalories = this.productRecieved().calories;
     this.currentProductAmountCalories = this.productRecieved().calories;
-    
+
     effect(() => {
 
       if( Object.keys( this.productRecieved() ).length === 0 ){

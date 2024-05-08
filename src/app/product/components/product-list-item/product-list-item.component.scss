@@ -1,15 +1,41 @@
 
-article{
-  display: flex;
+mat-card{
   width: 100%;
 
+  mat-card-content{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .product-quantity{
+
+    padding-top: 1rem;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    
+    button{
+      margin-top: -1.3rem;
+      font-size: 1.2rem;
+    }
+
+    mat-form-field{
+      max-width: 30%;
+    }
+  }
   img{
-    width: 30%;
-    height: 100%;
-    object-fit: fill;
+    max-width: 45%;
+    object-fit: contain;
     flex-shrink: 0;
+    border-radius: 25%;
+
   }
   .productDetails{
+    display: flex;
     width: 100%;
+    flex-direction: column;
+    justify-content: center;
   }
 }

@@ -6,11 +6,13 @@ import { ProductsService } from '../../services/products.service';
 import { ProductListItemComponent } from '../product-list-item/product-list-item.component';
 import { NewProductButtonComponent } from '../new-product-button/new-product-button.component';
 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductSearchComponent, ProductFormComponent, ProductListItemComponent, NewProductButtonComponent],
+  imports: [ProductSearchComponent, ProductFormComponent, ProductListItemComponent, NewProductButtonComponent, MatSlideToggleModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })
