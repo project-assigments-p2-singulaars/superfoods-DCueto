@@ -1,0 +1,24 @@
+<app-product-search (search)="handleInputData( $event )"></app-product-search>
+<app-new-product-button (formStatusChanged)="handleFormState($event)"></app-new-product-button>
+@if (formStatus === 'visible') {
+  <app-product-form (newProduct)="handleNewProduct($event)"></app-product-form>
+}
+<section>
+  @if ( filteredProducts.length > 0 ) {
+    @for (product of filteredProducts; track $index) {
+      <app-product-list-item
+        [productName]="product.name"
+        [productImage]="product.image"
+        [productCalories]="product.calories"
+      ></app-product-list-item>
+    }
+  } @else {
+    @for (product of productsList; track $index) {
+      <app-product-list-item
+        [productName]="product.name"
+        [productImage]="product.image"
+        [productCalories]="product.calories"
+      ></app-product-list-item>
+    }
+  }
+</section>

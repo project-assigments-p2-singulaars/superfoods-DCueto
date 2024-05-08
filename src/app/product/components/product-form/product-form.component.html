@@ -1,0 +1,12 @@
+<form [formGroup]="productForm" (ngSubmit)="handleFormSubmit()">
+  <label for="product-name-input">Name</label>
+  <input type="text" name="productName" id="product-name-input" formControlName="productNameInput" required>
+
+  <label for="product-calories-input">Calories</label>
+  <input type="number" name="productCalories" id="product-calories-input" min="1" formControlName="productCaloriesInput" required>
+
+  <label for="product-image-input">Image</label>
+  <input type="text" name="productImage" id="product-image-input" formControlName="productImageInput" required>
+
+  <input type="submit" value="Add Product">
+</form>

@@ -1,0 +1,8 @@
+<ul>
+  @if ( totalCalories > 0 ) {
+    <h3>Total Calories {{ totalCalories }}</h3>
+  }
+  @for (product of menuList; track $index) {
+    <li>{{ product.name }} - {{ product.calories }} calories x {{ product.quantity }}</li>
+  }
+</ul>

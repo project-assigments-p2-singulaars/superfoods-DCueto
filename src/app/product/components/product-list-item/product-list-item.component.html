@@ -1,0 +1,9 @@
+<article>
+  <img src="{{productImage}}" alt="{{ productName }}" >
+  <div class="productDetails">
+    <h4>{{ productName }}</h4>
+    <input type="button" value="+" (click)="sendProductToMenu( )" >
+    <input type="number" name="quantityField" id="quantityField" value="1" min="1" [(ngModel)]="quantityInputValue">
+    <p>Calories: <span>{{ productCalories }}</span></p>
+  </div>
+</article>
