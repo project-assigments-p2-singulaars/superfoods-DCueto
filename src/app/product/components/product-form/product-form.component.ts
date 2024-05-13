@@ -1,12 +1,16 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from '../../shared/interfaces/product';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ProductsService } from '../../services/products.service';
 
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-product-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.scss'
 })
@@ -18,8 +22,6 @@ export class ProductFormComponent {
     productCaloriesInput: new FormControl(1, {nonNullable: true}),
     productImageInput: new FormControl('', {nonNullable: true}),
   });
-
-  @Output() newProduct = new EventEmitter<Product>();
 
   constructor( private productsService: ProductsService ){}
 
@@ -33,8 +35,8 @@ export class ProductFormComponent {
     }
 
     this.productsService.setNewProduct( this.formData );
-    this.newProduct.emit( this.formData );
     this.productForm.reset();
+    this.productsService.toggleNewProductModalState();
   }
 
 }

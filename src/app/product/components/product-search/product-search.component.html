@@ -1,2 +1,4 @@
-<label for="search">Search</label>
-<input type="text" name="search" id="search" (keyup)="sendInputValue( $event )">
+<mat-form-field class="example-form-field">
+  <mat-label>Search</mat-label>
+  <input matInput type="text" name="search" id="search" [(ngModel)]="value">
+</mat-form-field>

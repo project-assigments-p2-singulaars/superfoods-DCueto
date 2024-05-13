@@ -4,8 +4,13 @@
   flex-direction: column;
   margin-top: 1rem;
   padding: 1rem;
+  padding-left: 0;
+  width: 100%;
+}
 
-  label{
-    font-weight: 600;
+@media screen and ( width < 700px ){
+  :host{
+    padding: 0;
+    margin-top: .5rem;
   }
 }

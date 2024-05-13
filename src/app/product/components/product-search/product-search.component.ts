@@ -1,16 +1,17 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, effect, EventEmitter, inject, input, Output } from '@angular/core';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { ProductsService } from '../../services/products.service';
+
 
 @Component({
   selector: 'app-product-search',
   standalone: true,
-  imports: [],
+  imports: [MatInputModule, FormsModule],
   templateUrl: './product-search.component.html',
   styleUrl: './product-search.component.scss'
 })
 export class ProductSearchComponent {
-  @Output() search = new EventEmitter<string>();
-
-  sendInputValue( event: any ){
-    this.search.emit( event.target.value.trim() );
-  }
+  productService = inject( ProductsService );
+  value = this.productService.searchText;
 }

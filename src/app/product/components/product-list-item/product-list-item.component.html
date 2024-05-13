@@ -1,9 +1,13 @@
-<article>
-  <img src="{{productImage}}" alt="{{ productName }}" >
-  <div class="productDetails">
-    <h4>{{ productName }}</h4>
-    <input type="button" value="+" (click)="sendProductToMenu( )" >
-    <input type="number" name="quantityField" id="quantityField" value="1" min="1" [(ngModel)]="quantityInputValue">
-    <p>Calories: <span>{{ productCalories }}</span></p>
-  </div>
-</article>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ productName }}</mat-card-title>
+    <mat-card-subtitle>Calories: {{ productCalories }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ productImage }}" alt="">
+  <mat-card-content>
+    <div class="product-quantity">
+      <button (click)="sendProductToMenu( )" >+</button>
+      <input type="number" name="quantityField" id="quantityField" value="1" min="1" [(ngModel)]="quantityInputValue">
+    </div>
+  </mat-card-content>
+</mat-card>

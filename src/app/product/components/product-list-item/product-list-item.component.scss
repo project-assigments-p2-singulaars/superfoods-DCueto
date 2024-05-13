@@ -1,15 +1,45 @@
+:host{
+  margin: 1rem 0;
+  display: block;
+  width: 48%
+}
 
-article{
-  display: flex;
-  width: 100%;
+mat-card{
+
+  mat-card-header{
+    padding: 8px 16px;
+  }
 
   img{
-    width: 30%;
-    height: 100%;
-    object-fit: fill;
-    flex-shrink: 0;
+    aspect-ratio: 16 / 6;
+    object-fit: cover;
   }
-  .productDetails{
+
+  mat-card-content{
+    padding: 1rem;
+  }
+
+  .product-quantity{
+    font-size: 1.5rem;
+    display: flex;
+    gap: 4%;
+
+    button{
+      font-size: inherit;
+      padding: 0 .75rem;
+    }
+
+    input{
+      font-size: inherit;
+      width: 100%;
+      padding: .3rem .5rem;
+    }
+  }
+}
+
+
+@media screen and ( width < 700px ){
+  :host{
     width: 100%;
   }
 }

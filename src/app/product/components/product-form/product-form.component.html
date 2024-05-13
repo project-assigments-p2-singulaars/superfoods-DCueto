@@ -1,12 +1,20 @@
 <form [formGroup]="productForm" (ngSubmit)="handleFormSubmit()">
-  <label for="product-name-input">Name</label>
-  <input type="text" name="productName" id="product-name-input" formControlName="productNameInput" required>
 
-  <label for="product-calories-input">Calories</label>
-  <input type="number" name="productCalories" id="product-calories-input" min="1" formControlName="productCaloriesInput" required>
+  <mat-form-field>
+    <mat-label for="product-name-input">Name</mat-label>
+    <input matInput type="text" name="productName" id="product-name-input" formControlName="productNameInput" required>
+  </mat-form-field>
 
-  <label for="product-image-input">Image</label>
-  <input type="text" name="productImage" id="product-image-input" formControlName="productImageInput" required>
+  <mat-form-field>
+    <mat-label for="product-calories-input">Calories</mat-label>
+    <input matInput type="number" name="productCalories" id="product-calories-input" min="1" formControlName="productCaloriesInput" required>
+  </mat-form-field>
 
-  <input type="submit" value="Add Product">
+  <mat-form-field>
+    <mat-label for="product-image-input">Image</mat-label>
+    <input matInput type="text" name="productImage" id="product-image-input" formControlName="productImageInput" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Add Product</button>
+
 </form>
