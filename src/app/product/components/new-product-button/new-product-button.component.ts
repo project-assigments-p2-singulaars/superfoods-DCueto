@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormStatus } from '../../shared/interfaces/product';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-new-product-button',
@@ -10,18 +11,10 @@ import { FormStatus } from '../../shared/interfaces/product';
 })
 export class NewProductButtonComponent {
 
+  productsService = inject( ProductsService );
   buttonTitle = 'New Product';
-  formStatus: FormStatus = 'hidden';
-  @Output() formStatusChanged = new EventEmitter<FormStatus>();
 
   handleFormButton(){
-
-    if(this.formStatus === 'hidden'){
-      this.formStatus = 'visible';
-    } else {
-      this.formStatus = 'hidden';
-    }
-
-    this.formStatusChanged.emit( this.formStatus );
+    this.productsService.toggleNewProductModalState();
   }
 }

@@ -29,6 +29,6 @@ export class ProductListItemComponent {
       quantity: this.quantityInputValue
     }
 
-    this.productsService.setDataProductToMenu( product );
+    this.productsService.setProductToMenu( product );
   }
 }

@@ -1,41 +1,45 @@
+:host{
+  margin: 1rem 0;
+  display: block;
+  width: 48%
+}
 
 mat-card{
-  width: 100%;
+
+  mat-card-header{
+    padding: 8px 16px;
+  }
+
+  img{
+    aspect-ratio: 16 / 6;
+    object-fit: cover;
+  }
 
   mat-card-content{
-    display: flex;
-    flex-direction: row;
+    padding: 1rem;
   }
 
   .product-quantity{
-
-    padding-top: 1rem;
-    padding-bottom: 0;
+    font-size: 1.5rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    
+    gap: 4%;
+
     button{
-      margin-top: -1.3rem;
-      font-size: 1.2rem;
+      font-size: inherit;
+      padding: 0 .75rem;
     }
 
-    mat-form-field{
-      max-width: 30%;
+    input{
+      font-size: inherit;
+      width: 100%;
+      padding: .3rem .5rem;
     }
   }
-  img{
-    max-width: 45%;
-    object-fit: contain;
-    flex-shrink: 0;
-    border-radius: 25%;
+}
 
-  }
-  .productDetails{
-    display: flex;
+
+@media screen and ( width < 700px ){
+  :host{
     width: 100%;
-    flex-direction: column;
-    justify-content: center;
   }
 }
