@@ -1,0 +1,36 @@
+:host{
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+button{
+  height: 74%;
+  border: inherit;
+  border-radius: .2rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  color: #2d2d2d;
+  font-size: .85rem;
+  letter-spacing: .02rem;
+}
+
+button:hover{
+  background-color: lightgray;
+}
+
+
+@media screen and ( width < 700px ){
+  :host{
+    margin-top: 0;
+    padding: 0;
+  }
+
+  button{
+    height: auto;
+    padding: 1rem 0;
+    width: 100%;
+  }
+}

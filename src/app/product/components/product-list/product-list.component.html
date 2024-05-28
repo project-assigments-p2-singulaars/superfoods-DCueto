@@ -1,0 +1,14 @@
+<header class="header-list">
+  <app-new-product-button></app-new-product-button>
+  <app-product-search></app-product-search>
+</header>
+
+<section>
+  @for (product of productsList(); track $index) {
+    <app-product-list-item
+      [productName]="product.name"
+      [productImage]="product.image"
+      [productCalories]="product.calories"
+    ></app-product-list-item>
+  }
+</section>

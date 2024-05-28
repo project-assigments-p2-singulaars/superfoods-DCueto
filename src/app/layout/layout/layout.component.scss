@@ -1,0 +1,17 @@
+
+
+.grid-left{
+  background-color: lightblue;
+  overflow: scroll;
+}
+
+.grid-right{
+  background-color: lightcyan;
+  overflow: scroll;
+}
+
+:host mat-grid-list mat-grid-tile.mat-grid-tile .mat-grid-tile-content{
+  flex-direction: column;
+  justify-content: flex-start !important;
+  display: block !important;
+}

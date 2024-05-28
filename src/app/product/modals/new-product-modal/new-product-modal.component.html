@@ -1,0 +1,9 @@
+@if ( modalState() === 'visible' ) {
+  <app-modal class="modal" (click)="onModalClick( $event )">
+    <button class="close-modal-btn" (click)="handleCloseModalBtn()">x</button>
+    <div class="new-product-modal">
+      <app-product-form></app-product-form>
+    </div>
+  </app-modal>
+}
+
